@@ -13,7 +13,6 @@ import (
 )
 
 func main() {
-
 	if err := initConfig(); err != nil {
 		logrus.Fatalf("error initializing configs %s", err.Error())
 	}

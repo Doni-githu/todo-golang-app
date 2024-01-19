@@ -1,8 +1,12 @@
 package service
 
-import "github.com/Doni-githu/todo-golang-app/pkg/repository"
+import (
+	"github.com/Doni-githu/todo-golang-app"
+	"github.com/Doni-githu/todo-golang-app/pkg/repository"
+)
 
 type Authonrization interface {
+	CreateUser(user todo.User) (int, error) 
 }
 
 type TodoList interface {
@@ -18,5 +22,7 @@ type Service struct {
 }
 
 func NewService(repos *repository.Repository) *Service {
-	return &Service{}
+	return &Service{
+		Authonrization: newAuthService(repos.Authonrization),
+	}
 }

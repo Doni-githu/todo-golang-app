@@ -8,7 +8,7 @@ import (
 
 
 type Server struct {
-	httpServer *http.Server
+  httpServer *http.Server
 }
 
 func (s *Server) Run(port string, handler http.Handler) error {
